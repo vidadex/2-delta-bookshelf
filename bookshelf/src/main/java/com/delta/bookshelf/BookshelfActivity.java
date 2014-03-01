@@ -51,6 +51,11 @@ public class BookshelfActivity extends ListActivity {
         //display it
         LazyAdapter lazyAdapter = new LazyAdapter(this, entitiesToDisplay);
         setListAdapter(lazyAdapter);
+
+
+
+
+
     }
 
 

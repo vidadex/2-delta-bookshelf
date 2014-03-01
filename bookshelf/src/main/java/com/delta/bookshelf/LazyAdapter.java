@@ -67,9 +67,10 @@ public class LazyAdapter extends BaseAdapter {
         if (cachedEntity != null) {
             viewHolder.textView.setText(cachedEntity.getName());
             viewHolder.spinner.setVisibility(View.GONE);
-            Bitmap b = roundCornerImage(cachedEntity.getBitmap(),5.0f);
-            viewHolder.imageView.setImageBitmap(b);
-
+            if(cachedEntity.getBitmap() != null){
+                Bitmap b = roundCornerImage(cachedEntity.getBitmap(),5.0f);
+                viewHolder.imageView.setImageBitmap(b);
+            }
         } else {
             viewHolder.textView.setText("");
             viewHolder.spinner.setVisibility(View.VISIBLE);
@@ -107,7 +108,7 @@ public class LazyAdapter extends BaseAdapter {
     }
 
     public Bitmap roundCornerImage(Bitmap src, float round) {
-        
+
         // Source image size
         int width = src.getWidth();
         int height = src.getHeight();
